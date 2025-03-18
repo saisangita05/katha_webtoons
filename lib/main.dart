@@ -97,23 +97,26 @@ class _MainNavigationState extends State<MainNavigation> {
             ProfileScreen(),
           ],
         ),
-        bottomNavigationBar: Container(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          decoration: BoxDecoration(
-            color: Colors.black,
-            border: Border(
-              top: BorderSide(color: Colors.grey.shade800, width: 0.5),
+        bottomNavigationBar: SafeArea(
+          child: Container(
+            padding: EdgeInsets.symmetric(vertical: 10),
+            decoration: BoxDecoration(
+              color: Colors.black,
+              border: Border(
+                top: BorderSide(color: Colors.grey.shade800, width: 0.5),
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                _buildNavItem(Icons.home, 'Home', 0),
+                _buildNavItem(Icons.card_membership_rounded, 'Membership', 1),
+                _buildNavItem(Icons.person, 'Profile', 2),
+              ],
             ),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _buildNavItem(Icons.home, 'Home', 0),
-              _buildNavItem(Icons.card_membership_rounded, 'Membership', 1),
-              _buildNavItem(Icons.person, 'Profile', 2),
-            ],
-          ),
         ),
+
       ),
     );
   }
